@@ -1,0 +1,12 @@
+appdirs==1.4.4
+attrs==23.1.0
+black==19.3b0
+blinker==1.6.2
+Django==1.11
+Flask-Login==0.6.2
+Flask-Mail==0.9.1
+Flask-MySQLdb==1.0.1
+mysql-connector==2.2.9
+mysqlclient==2.1.1
+pytz==2022.7
+toml==0.10.2

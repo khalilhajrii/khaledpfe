@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css"/>
+
+    </head>
+    <body>
+        <div class="sidebar">
+            <div class="logo-details">
+                <i class='bx bxl-c-plus-plus'></i>
+                <span class="logo_name">ABB</span>
+            </div>
+            <ul class="nav-links">
+                {% if session['status']==1 %}
+                <li>
+                    <a href="/users">
+                        <i class='bx bx-box'></i>
+                        <span class="links_name">Users list</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/action">
+                        <i class='bx bx-list-ul'></i>
+                        <span class="links_name">Actions list</span>
+                    </a>
+                </li>
+                {% endif %}
+                <li>
+                    <a href="/useraction">
+                        <i class='bx bx-toggle-left'></i>
+                        <span class="links_name">Action</span>
+                    </a>
+                </li>
+                <li class="log_out">
+                    <a href="{{ url_for('logout') }}">
+                        <i class='bx bx-log-out'></i>
+                        <span class="links_name">Log out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <section class="home-section">
+            <nav>
+                <div class="sidebar-button">
+                    <i class='bx bx-menu sidebarBtn'></i>
+                    <span class="dashboard">Dashboard</span>
+                </div>
+                <div class="profile- dropdown">
+                  <!--<img src="images/profile.jpg" alt="">-->
+                  <button class="btn dropdown-toggle" type="button" id="profileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="admin_name">{{ session['name'] }} {{ session['last_name'] }} </span>
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="profileDropdown">
+                      <a class="dropdown-item" href="/profile">Profile</a>
+                  </div>
+              </div>
+              
+            </nav>
+            <div class="home-content">
+                <div class="container"> 
+                  {% block content %}
+                  {% endblock %}
+                    </div>
+                </div>
+            </section>
+        </body>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="../static/js/essentials.js"></script>
+        <script src="../static/js/controle.js"></script>
+    </html>
